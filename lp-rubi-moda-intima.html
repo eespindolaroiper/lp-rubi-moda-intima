@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rubi Moda Íntima · Lingerie · Pijamas · LoveShop · Sombrio/SC</title>
+  <meta name="description" content="Para mulheres reais que sabem o que querem. Lingerie, pijamas, loveshop e perfumaria em Sombrio/SC. Envio para todo Brasil." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          'cream': '#FBF8F3',
+          'cream-soft': '#F5EFE6',
+          'cream-dark': '#EDE4D4',
+          'rubi': '#A8132E',
+          'rubi-deep': '#7A0E22',
+          'rubi-soft': '#C42945',
+          'pink': '#E83864',
+          'pink-soft': '#F8B4C5',
+          'gold': '#C9A961',
+          'gold-soft': '#E8D5A0',
+          'ink': '#1C1817',
+          'ink-mid': '#3A3530',
+          'mute': '#8B7E6E',
+          'mute-soft': '#B5A89A',
+        },
+        fontFamily: {
+          'display': ['Playfair Display', 'Georgia', 'serif'],
+          'sans': ['Inter', 'system-ui', 'sans-serif'],
+        },
+      } },
+    };
+  </script>
+
+  <style>
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: 'Inter', sans-serif; background: #FBF8F3; color: #1C1817; font-weight: 400; overflow-x: hidden; }
+
+    .display { font-family: 'Playfair Display', serif; font-feature-settings: "lnum", "kern"; letter-spacing: -0.015em; }
+    .italica { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
+    .eyebrow { font-family: 'Inter', sans-serif; letter-spacing: 0.32em; font-size: 10px; text-transform: uppercase; font-weight: 500; }
+
+    /* BOTÕES */
+    .btn-rubi {
+      background: #A8132E; color: #FBF8F3;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #A8132E;
+      position: relative; overflow: hidden;
+    }
+    .btn-rubi:hover { background: #7A0E22; border-color: #7A0E22; transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(168, 19, 46, 0.5); letter-spacing: 0.4em; }
+
+    .btn-outline-rubi {
+      border: 1px solid #A8132E; color: #A8132E;
+      transition: all 0.5s ease; background: transparent;
+    }
+    .btn-outline-rubi:hover { background: #A8132E; color: #FBF8F3; letter-spacing: 0.4em; }
+
+    .btn-cream {
+      background: #FBF8F3; color: #A8132E;
+      transition: all 0.5s ease; border: 1px solid #FBF8F3;
+    }
+    .btn-cream:hover { background: transparent; color: #FBF8F3; border-color: #FBF8F3; letter-spacing: 0.4em; }
+
+    /* LINHAS / ORNAMENTOS */
+    .linha { width: 36px; height: 1px; background: #A8132E; }
+    .linha-light { width: 36px; height: 1px; background: rgba(251, 248, 243, 0.5); }
+    .linha-gold { width: 36px; height: 1px; background: #C9A961; }
+
+    .ornamento { display: inline-flex; align-items: center; justify-content: center; gap: 14px; }
+    .ornamento::before, .ornamento::after {
+      content: ''; display: inline-block; width: 28px; height: 1px; background: #A8132E;
+    }
+    .ornamento-light::before, .ornamento-light::after {
+      content: ''; display: inline-block; width: 28px; height: 1px; background: rgba(251, 248, 243, 0.5);
+    }
+    .ornamento-light { display: inline-flex; align-items: center; justify-content: center; gap: 14px; }
+
+    .ornamento-gold::before, .ornamento-gold::after {
+      content: '◆'; color: #C9A961; font-size: 8px;
+    }
+    .ornamento-gold { display: inline-flex; align-items: center; justify-content: center; gap: 14px; }
+
+    /* DIAMOND DECORATIVO */
+    .diamond-bg {
+      position: absolute; opacity: 0.04; pointer-events: none;
+    }
+
+    /* IMAGENS / FRAMES */
+    .foto-wrap { position: relative; overflow: hidden; background: linear-gradient(135deg, #F5EFE6 0%, #EDE4D4 100%); }
+    .foto-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .foto-wrap:hover img { transform: scale(1.05); }
+
+    /* HERO */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 70% 50% at 80% 30%, rgba(168, 19, 46, 0.08), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(232, 56, 100, 0.06), transparent 50%),
+        #FBF8F3;
+    }
+
+    /* MARQUEE */
+    .marquee { display: flex; animation: drift 50s linear infinite; white-space: nowrap; }
+    @keyframes drift { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* WA FLOAT */
+    .wa-breath { animation: breath 3s ease-in-out infinite; }
+    @keyframes breath {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+    }
+
+    /* CARDS DE CATEGORIA */
+    .card-categoria {
+      background: #FBF8F3;
+      border: 1px solid rgba(168, 19, 46, 0.12);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-categoria::before {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 0; background: rgba(168, 19, 46, 0.04);
+      transition: height 0.6s ease;
+    }
+    .card-categoria:hover { transform: translateY(-6px); border-color: rgba(168, 19, 46, 0.4); box-shadow: 0 30px 60px -30px rgba(168, 19, 46, 0.25); }
+    .card-categoria:hover::before { height: 100%; }
+    .card-categoria > * { position: relative; }
+
+    /* PRODUCT CARD */
+    .product-card {
+      background: #FBF8F3;
+      border: 0.5px solid rgba(168, 19, 46, 0.08);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    .product-card:hover { border-color: rgba(168, 19, 46, 0.4); transform: translateY(-4px); box-shadow: 0 20px 40px -20px rgba(168, 19, 46, 0.2); }
+
+    /* DIFERENCIAIS */
+    .diferencial-card {
+      background: #FBF8F3;
+      border: 1px solid rgba(201, 169, 97, 0.2);
+      transition: all 0.5s ease;
+    }
+    .diferencial-card:hover { border-color: #C9A961; transform: translateY(-4px); }
+
+    /* SEÇÃO DARK */
+    .dark-section {
+      background: linear-gradient(135deg, #1C1817 0%, #3A1015 100%);
+      color: #FBF8F3;
+      position: relative;
+      overflow: hidden;
+    }
+    .dark-section::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 30%, rgba(168, 19, 46, 0.15), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 70%, rgba(201, 169, 97, 0.08), transparent 60%);
+    }
+
+    /* ANIMAÇÕES */
+    @keyframes soft-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .in-up { animation: soft-up 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+    .d-1 { animation-delay: 0.15s; opacity: 0; }
+    .d-2 { animation-delay: 0.3s; opacity: 0; }
+
+    /* SVG PRODUCT PLACEHOLDERS */
+    .placeholder-product {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #F5EFE6 0%, #EDE4D4 100%);
+    }
+
+    /* SCROLL HINT */
+    .scroll-hint {
+      animation: bounce-soft 2.5s ease-in-out infinite;
+    }
+    @keyframes bounce-soft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* SELO */
+    .selo-rubi {
+      width: 130px; height: 130px;
+      border: 1px solid #A8132E;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+      background: rgba(251, 248, 243, 0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    /* INPUT FORMULÁRIO */
+    .input-rubi {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(168, 19, 46, 0.2);
+      padding: 12px 4px;
+      font-family: 'Inter', sans-serif;
+      color: #1C1817;
+      width: 100%;
+      transition: all 0.4s ease;
+      outline: none;
+      font-size: 14px;
+    }
+    .input-rubi:focus { border-bottom-color: #A8132E; }
+    .input-rubi::placeholder { color: #B5A89A; }
+
+    /* GRADIENT TEXT */
+    .text-rubi-gradient {
+      background: linear-gradient(135deg, #A8132E 0%, #E83864 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* DETAILS / FAQ */
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+  </style>
+</head>
+<body class="bg-cream min-h-screen">
+
+  <!-- ========== HEADER ========== -->
+  <header class="bg-cream/95 backdrop-blur-md border-b border-rubi/10 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+      <a href="#" class="flex items-center gap-3 group">
+        <!-- Logo SVG do Diamante Rubi -->
+        <svg width="48" height="48" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-500 group-hover:scale-110">
+          <!-- Diamante facetado -->
+          <g>
+            <path d="M16 22 L48 22 L52 28 L32 56 L12 28 Z" fill="#A8132E" stroke="#7A0E22" stroke-width="0.5" stroke-linejoin="round"/>
+            <path d="M16 22 L20 12 L44 12 L48 22 Z" fill="#C42945" stroke="#7A0E22" stroke-width="0.5" stroke-linejoin="round"/>
+            <path d="M20 12 L24 22 L32 12 L40 22 L44 12 Z" fill="#A8132E" opacity="0.6" stroke="#7A0E22" stroke-width="0.4"/>
+            <path d="M16 22 L24 22 L32 56 Z" fill="#A8132E" opacity="0.85"/>
+            <path d="M48 22 L40 22 L32 56 Z" fill="#7A0E22" opacity="0.75"/>
+            <path d="M24 22 L32 56 L40 22 Z" fill="#C42945" opacity="0.55"/>
+            <!-- Brilho -->
+            <path d="M22 16 L24 18 L26 16" fill="none" stroke="#FFFFFF" stroke-width="0.6" opacity="0.6" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div>
+          <p class="display text-2xl text-rubi leading-none font-medium">Rubi</p>
+          <p class="eyebrow text-mute mt-1 tracking-[0.4em]">moda íntima</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#categorias" class="text-sm text-ink/80 hover:text-rubi transition-colors">Categorias</a>
+        <a href="#destaques" class="text-sm text-ink/80 hover:text-rubi transition-colors">Destaques</a>
+        <a href="#diferenciais" class="text-sm text-ink/80 hover:text-rubi transition-colors">Por que Rubi</a>
+        <a href="#contato" class="text-sm text-ink/80 hover:text-rubi transition-colors">Contato</a>
+        <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Rubi%20e%20gostaria%20de%20saber%20mais." class="btn-rubi px-6 py-3 eyebrow">
+          Comprar pelo Whats
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero-bg relative overflow-hidden py-20 md:py-28 lg:py-32">
+    <!-- Diamantes decorativos no fundo -->
+    <svg class="diamond-bg" style="top: 10%; right: 5%; width: 120px;" viewBox="0 0 64 64">
+      <path d="M16 22 L48 22 L32 56 L16 22 Z M16 22 L20 12 L44 12 L48 22 Z" fill="#A8132E"/>
+    </svg>
+    <svg class="diamond-bg" style="bottom: 15%; left: 8%; width: 80px;" viewBox="0 0 64 64">
+      <path d="M16 22 L48 22 L32 56 L16 22 Z M16 22 L20 12 L44 12 L48 22 Z" fill="#E83864"/>
+    </svg>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+
+        <div class="md:col-span-7 in-up">
+          <p class="eyebrow text-rubi mb-8 flex items-center gap-4">
+            <span class="linha"></span>
+            Sombrio · SC · Para todo o Brasil
+          </p>
+
+          <h1 class="display text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-ink font-medium mb-10">
+            Para mulheres<br>
+            <span class="italica text-rubi">reais</span> que sabem<br>
+            o que <span class="italica text-rubi">querem.</span>
+          </h1>
+
+          <p class="text-lg md:text-2xl text-ink-mid leading-[1.6] max-w-2xl mb-10 font-light">
+            Lingerie, pijamas, loveshop e perfumaria selecionados a dedo —
+            <em class="italica text-rubi">com a confiança que toda mulher merece.</em>
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Rubi%20e%20gostaria%20de%20conhecer%20o%20cat%C3%A1logo." class="btn-rubi px-9 py-4 eyebrow inline-flex items-center justify-center gap-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074"/></svg>
+              Comprar pelo WhatsApp
+            </a>
+            <a href="#categorias" class="btn-outline-rubi px-9 py-4 eyebrow inline-flex items-center justify-center">
+              Ver Categorias
+            </a>
+          </div>
+
+          <!-- Selos rápidos -->
+          <div class="grid grid-cols-3 gap-6 mt-14 pt-10 border-t border-rubi/15 max-w-xl">
+            <div>
+              <p class="display text-3xl text-rubi font-medium">3.3K+</p>
+              <p class="text-xs text-mute mt-1 tracking-wider">seguidoras</p>
+            </div>
+            <div>
+              <p class="display text-3xl text-rubi font-medium">560+</p>
+              <p class="text-xs text-mute mt-1 tracking-wider">posts</p>
+            </div>
+            <div>
+              <p class="display text-3xl text-rubi font-medium">100%</p>
+              <p class="text-xs text-mute mt-1 tracking-wider">discreto</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 in-up d-1 relative">
+          <!-- Mockup hero — composição com placeholder + selo -->
+          <div class="relative">
+            <div class="foto-wrap aspect-[3/4] rounded-sm">
+              <!-- SVG produto/lingerie estilizado -->
+              <svg viewBox="0 0 400 533" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                <defs>
+                  <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FBF8F3"/>
+                    <stop offset="100%" stop-color="#EDE4D4"/>
+                  </linearGradient>
+                  <linearGradient id="lingerieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#C42945"/>
+                    <stop offset="100%" stop-color="#A8132E"/>
+                  </linearGradient>
+                </defs>
+                <rect width="400" height="533" fill="url(#bgGrad)"/>
+                <!-- Lingerie estilizada (sutiã + calcinha) -->
+                <g transform="translate(200, 250)">
+                  <!-- Sutiã -->
+                  <path d="M -90 -50 Q -80 -20, -50 -10 Q -25 -5, 0 -8 Q 25 -5, 50 -10 Q 80 -20, 90 -50 Q 60 -80, 30 -75 Q 0 -65, -30 -75 Q -60 -80, -90 -50 Z" fill="url(#lingerieGrad)" opacity="0.85"/>
+                  <!-- Detalhes de renda no sutiã -->
+                  <path d="M -90 -50 Q -80 -20, -50 -10 Q -25 -5, 0 -8 Q 25 -5, 50 -10 Q 80 -20, 90 -50" fill="none" stroke="#FBF8F3" stroke-width="0.8" opacity="0.5"/>
+                  <circle cx="-65" cy="-45" r="1.5" fill="#FBF8F3" opacity="0.7"/>
+                  <circle cx="-45" cy="-30" r="1.5" fill="#FBF8F3" opacity="0.7"/>
+                  <circle cx="65" cy="-45" r="1.5" fill="#FBF8F3" opacity="0.7"/>
+                  <circle cx="45" cy="-30" r="1.5" fill="#FBF8F3" opacity="0.7"/>
+                  <!-- Alças -->
+                  <path d="M -75 -65 Q -75 -100, -50 -130" fill="none" stroke="#A8132E" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M 75 -65 Q 75 -100, 50 -130" fill="none" stroke="#A8132E" stroke-width="3" stroke-linecap="round"/>
+                  <!-- Calcinha embaixo -->
+                  <path d="M -70 30 Q -70 60, -50 80 Q -30 90, 0 92 Q 30 90, 50 80 Q 70 60, 70 30 Q 50 35, 0 35 Q -50 35, -70 30 Z" fill="url(#lingerieGrad)" opacity="0.85"/>
+                  <path d="M -70 30 Q -70 60, -50 80 Q -30 90, 0 92 Q 30 90, 50 80 Q 70 60, 70 30" fill="none" stroke="#FBF8F3" stroke-width="0.8" opacity="0.5"/>
+                </g>
+                <!-- Petalas decorativas -->
+                <g transform="translate(60, 100)" opacity="0.3">
+                  <circle cx="0" cy="0" r="4" fill="#E83864"/>
+                  <circle cx="20" cy="15" r="3" fill="#E83864"/>
+                  <circle cx="-15" cy="20" r="3.5" fill="#E83864"/>
+                </g>
+                <g transform="translate(330, 420)" opacity="0.3">
+                  <circle cx="0" cy="0" r="4" fill="#E83864"/>
+                  <circle cx="-20" cy="15" r="3" fill="#E83864"/>
+                  <circle cx="15" cy="20" r="3.5" fill="#E83864"/>
+                </g>
+                <!-- Texto sutil -->
+                <text x="200" y="490" text-anchor="middle" font-family="Playfair Display, serif" font-size="14" font-style="italic" fill="#A8132E" opacity="0.6">eleve sua autoestima</text>
+              </svg>
+            </div>
+
+            <!-- Selo girando dourado -->
+            <div class="absolute -bottom-6 -left-6 selo-rubi shadow-2xl">
+              <p class="italica text-rubi text-lg leading-tight text-center">Embalagem<br>discreta</p>
+              <div class="w-8 h-px bg-gold my-2"></div>
+              <p class="text-[9px] text-mute tracking-widest uppercase">100% sigilo</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE CATEGORIAS ========== -->
+  <section class="py-6 bg-rubi text-cream overflow-hidden border-y border-rubi-deep">
+    <div class="marquee italica text-3xl md:text-5xl">
+      <span class="pr-12">Lingerie</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Pijamas</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">LoveShop</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Perfumes</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Acessórios</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Lingerie</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Pijamas</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">LoveShop</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Perfumes</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Acessórios</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Lingerie</span><span class="pr-12 text-gold">◆</span>
+      <span class="pr-12">Pijamas</span><span class="pr-12 text-gold">◆</span>
+    </div>
+  </section>
+
+  <!-- ========== SOBRE A RUBI ========== -->
+  <section class="py-24 md:py-32 bg-cream-soft/40">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="eyebrow text-rubi mb-8"><span class="ornamento-gold">Quem é a Rubi</span></p>
+
+      <h2 class="display text-4xl md:text-6xl text-ink leading-[1.1] mb-10 font-medium">
+        Cada peça é escolhida<br>
+        com o <span class="italica text-rubi">cuidado de quem entende</span><br>
+        do que a mulher precisa.
+      </h2>
+
+      <p class="text-lg md:text-xl text-ink-mid leading-[1.8] max-w-3xl mx-auto font-light mb-10">
+        Aqui em Sombrio - SC, montamos a Rubi pra te oferecer mais do que produtos: oferecemos
+        <em class="italica text-rubi">a sensação de se sentir incrível</em> em qualquer ocasião.
+        Da lingerie que te dá confiança ao pijama que te abraça nos dias quietos —
+        passando por brinquedos sensuais sem julgamento e perfumes que marcam presença.
+      </p>
+
+      <p class="italica text-2xl text-rubi">
+        eleve sua autoestima 💋
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORIAS ========== -->
+  <section id="categorias" class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <p class="eyebrow text-rubi mb-8"><span class="ornamento">Categorias</span></p>
+        <h2 class="display text-4xl md:text-6xl text-ink leading-[1.1] mb-6 font-medium">
+          Tudo o que você quer,<br>
+          <span class="italica text-rubi">em um só lugar.</span>
+        </h2>
+        <p class="text-lg text-ink-mid leading-[1.7] font-light">
+          Cinco universos pra você explorar. Compra completa, atendimento personalizado pelo WhatsApp.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+
+        <!-- LINGERIE -->
+        <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20ver%20o%20cat%C3%A1logo%20de%20lingerie." class="card-categoria rounded-sm p-8 text-center block group">
+          <div class="aspect-square mb-6 flex items-center justify-center">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <path d="M 18 28 Q 24 22, 32 22 Q 40 22, 40 26 Q 40 22, 48 22 Q 56 22, 62 28 Q 58 38, 50 42 Q 40 44, 30 42 Q 22 38, 18 28 Z" fill="#A8132E" opacity="0.85"/>
+              <path d="M 18 28 Q 24 22, 32 22 Q 40 22, 40 26 Q 40 22, 48 22 Q 56 22, 62 28" fill="none" stroke="#FBF8F3" stroke-width="0.5" opacity="0.6"/>
+              <path d="M 22 22 Q 22 14, 28 10" fill="none" stroke="#A8132E" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M 58 22 Q 58 14, 52 10" fill="none" stroke="#A8132E" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="30" cy="30" r="0.8" fill="#FBF8F3" opacity="0.7"/>
+              <circle cx="50" cy="30" r="0.8" fill="#FBF8F3" opacity="0.7"/>
+              <path d="M 28 50 Q 28 60, 35 65 Q 40 67, 45 65 Q 52 60, 52 50" fill="#A8132E" opacity="0.75"/>
+            </svg>
+          </div>
+          <h3 class="display text-2xl text-ink mb-3 font-medium">Lingerie</h3>
+          <p class="text-sm text-mute leading-relaxed mb-5">Sutiãs, calcinhas, conjuntos e babydolls que valorizam você.</p>
+          <p class="eyebrow text-rubi group-hover:tracking-[0.4em] transition-all">Ver mais →</p>
+        </a>
+
+        <!-- PIJAMAS -->
+        <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20ver%20o%20cat%C3%A1logo%20de%20pijamas." class="card-categoria rounded-sm p-8 text-center block group">
+          <div class="aspect-square mb-6 flex items-center justify-center">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <!-- Camisola/pijama -->
+              <path d="M 22 18 L 30 14 L 50 14 L 58 18 L 62 28 L 60 60 Q 50 64, 40 64 Q 30 64, 20 60 L 18 28 Z" fill="#E83864" opacity="0.85"/>
+              <path d="M 30 14 Q 35 12, 40 12 Q 45 12, 50 14" fill="none" stroke="#E83864" stroke-width="2" stroke-linecap="round"/>
+              <!-- Padrão de bolinhas -->
+              <circle cx="30" cy="32" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+              <circle cx="42" cy="38" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+              <circle cx="50" cy="30" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+              <circle cx="36" cy="48" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+              <circle cx="48" cy="52" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+            </svg>
+          </div>
+          <h3 class="display text-2xl text-ink mb-3 font-medium">Pijamas</h3>
+          <p class="text-sm text-mute leading-relaxed mb-5">Camisolas, blusinhas, shorts e looks completos pra dormir bem.</p>
+          <p class="eyebrow text-rubi group-hover:tracking-[0.4em] transition-all">Ver mais →</p>
+        </a>
+
+        <!-- LOVESHOP (DESTAQUE) -->
+        <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20conhecer%20o%20LoveShop%20da%20Rubi." class="card-categoria rounded-sm p-8 text-center block group relative" style="border-color: rgba(168, 19, 46, 0.5);">
+          <span class="absolute top-3 right-3 bg-rubi text-cream text-[9px] tracking-widest px-2 py-1 uppercase">+18</span>
+          <div class="aspect-square mb-6 flex items-center justify-center">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <!-- Coração -->
+              <path d="M 40 60 Q 22 50, 18 35 Q 16 22, 28 18 Q 36 18, 40 26 Q 44 18, 52 18 Q 64 22, 62 35 Q 58 50, 40 60 Z" fill="#A8132E"/>
+              <path d="M 40 60 Q 22 50, 18 35 Q 16 22, 28 18 Q 36 18, 40 26" fill="none" stroke="#FBF8F3" stroke-width="0.6" opacity="0.4"/>
+              <!-- Detalhe ousado: chave/seta -->
+              <circle cx="40" cy="34" r="3" fill="#FBF8F3" opacity="0.4"/>
+              <path d="M 40 37 L 40 45" stroke="#FBF8F3" stroke-width="1.2" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3 class="display text-2xl text-ink mb-3 font-medium">LoveShop</h3>
+          <p class="text-sm text-mute leading-relaxed mb-5">Brinquedos, géis, óleos e acessórios sensuais para apimentar.</p>
+          <p class="eyebrow text-rubi group-hover:tracking-[0.4em] transition-all">Ver mais →</p>
+        </a>
+
+        <!-- PERFUMES -->
+        <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20ver%20o%20cat%C3%A1logo%20de%20perfumes." class="card-categoria rounded-sm p-8 text-center block group">
+          <div class="aspect-square mb-6 flex items-center justify-center">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <!-- Frasco perfume -->
+              <rect x="30" y="14" width="20" height="6" rx="1" fill="#C9A961"/>
+              <rect x="32" y="20" width="16" height="4" fill="#C9A961" opacity="0.6"/>
+              <path d="M 26 26 L 54 26 L 56 60 Q 56 64, 52 64 L 28 64 Q 24 64, 24 60 Z" fill="#E83864" opacity="0.85"/>
+              <path d="M 30 38 Q 35 35, 40 38 Q 45 41, 50 38" fill="none" stroke="#FBF8F3" stroke-width="0.8" opacity="0.5"/>
+              <text x="40" y="52" text-anchor="middle" font-family="Playfair Display, serif" font-size="9" font-style="italic" fill="#FBF8F3" opacity="0.7">Rubi</text>
+            </svg>
+          </div>
+          <h3 class="display text-2xl text-ink mb-3 font-medium">Perfumes</h3>
+          <p class="text-sm text-mute leading-relaxed mb-5">Fragrâncias femininas marcantes, importadas e nacionais.</p>
+          <p class="eyebrow text-rubi group-hover:tracking-[0.4em] transition-all">Ver mais →</p>
+        </a>
+
+        <!-- ACESSÓRIOS -->
+        <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20ver%20o%20cat%C3%A1logo%20de%20acess%C3%B3rios." class="card-categoria rounded-sm p-8 text-center block group">
+          <div class="aspect-square mb-6 flex items-center justify-center">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <!-- Anel/joia decorativa -->
+              <circle cx="40" cy="44" r="14" fill="none" stroke="#C9A961" stroke-width="2"/>
+              <ellipse cx="40" cy="32" rx="8" ry="10" fill="#A8132E"/>
+              <ellipse cx="40" cy="32" rx="8" ry="10" fill="none" stroke="#C9A961" stroke-width="1.5"/>
+              <path d="M 36 28 L 38 30 L 40 26 L 42 30 L 44 28" fill="none" stroke="#FBF8F3" stroke-width="0.8" opacity="0.7"/>
+              <circle cx="40" cy="32" r="2" fill="#FBF8F3" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3 class="display text-2xl text-ink mb-3 font-medium">Acessórios</h3>
+          <p class="text-sm text-mute leading-relaxed mb-5">Cintas, ligas, máscaras, joias íntimas e itens especiais.</p>
+          <p class="eyebrow text-rubi group-hover:tracking-[0.4em] transition-all">Ver mais →</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DIFERENCIAIS ========== -->
+  <section id="diferenciais" class="py-24 md:py-32 dark-section">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="eyebrow text-gold mb-8"><span class="ornamento-light">Por que comprar na Rubi</span></p>
+        <h2 class="display text-4xl md:text-6xl text-cream leading-[1.1] font-medium">
+          Mais que produtos.<br>
+          <span class="italica text-gold">Cuidado em cada detalhe.</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="diferencial-card rounded-sm p-7 text-center" style="background: rgba(251, 248, 243, 0.05); border-color: rgba(201, 169, 97, 0.3);">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-full border border-gold/40 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="20" height="14" rx="2"/>
+              <path d="M2 12h20"/>
+              <path d="M6 16h4"/>
+            </svg>
+          </div>
+          <h3 class="display text-xl text-cream mb-3 font-medium">PIX com desconto</h3>
+          <p class="text-sm text-cream/70 leading-relaxed">Pagamento via PIX tem condição especial. Aprovação imediata.</p>
+        </div>
+
+        <div class="diferencial-card rounded-sm p-7 text-center" style="background: rgba(251, 248, 243, 0.05); border-color: rgba(201, 169, 97, 0.3);">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-full border border-gold/40 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3 class="display text-xl text-cream mb-3 font-medium">Embalagem discreta</h3>
+          <p class="text-sm text-cream/70 leading-relaxed">Sem identificação do conteúdo. Sigilo absoluto na entrega.</p>
+        </div>
+
+        <div class="diferencial-card rounded-sm p-7 text-center" style="background: rgba(251, 248, 243, 0.05); border-color: rgba(201, 169, 97, 0.3);">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-full border border-gold/40 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 class="display text-xl text-cream mb-3 font-medium">Brasil todo</h3>
+          <p class="text-sm text-cream/70 leading-relaxed">Envio para qualquer cidade do Brasil. Frete calculado pelo CEP.</p>
+        </div>
+
+        <div class="diferencial-card rounded-sm p-7 text-center" style="background: rgba(251, 248, 243, 0.05); border-color: rgba(201, 169, 97, 0.3);">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-full border border-gold/40 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" class="text-gold">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074"/>
+            </svg>
+          </div>
+          <h3 class="display text-xl text-cream mb-3 font-medium">WhatsApp pessoal</h3>
+          <p class="text-sm text-cream/70 leading-relaxed">Atendimento humano. Tira dúvidas, pede dica, compra com privacidade.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DESTAQUES / VITRINE ========== -->
+  <section id="destaques" class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="grid md:grid-cols-2 gap-10 items-end mb-16">
+        <div>
+          <p class="eyebrow text-rubi mb-6"><span class="ornamento">Mais Vendidos</span></p>
+          <h2 class="display text-4xl md:text-5xl text-ink leading-[1.1] font-medium">
+            As preferidas das<br>
+            <span class="italica text-rubi">nossas clientes.</span>
+          </h2>
+        </div>
+        <div>
+          <p class="text-lg text-ink-mid leading-[1.7] font-light">
+            Curadoria do que mais sai todo mês. Toda peça é testada antes de entrar pro estoque —
+            <em class="italica text-rubi">a Rubi só vende o que ela mesma usaria.</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+        <article class="product-card rounded-sm group">
+          <div class="aspect-[3/4] relative overflow-hidden">
+            <div class="placeholder-product">
+              <svg width="60%" height="60%" viewBox="0 0 100 130">
+                <path d="M 20 35 Q 30 25, 50 28 Q 70 25, 80 35 Q 78 50, 50 55 Q 22 50, 20 35 Z" fill="#A8132E" opacity="0.85"/>
+                <path d="M 25 30 Q 25 18, 35 12" fill="none" stroke="#A8132E" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M 75 30 Q 75 18, 65 12" fill="none" stroke="#A8132E" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M 30 65 Q 30 85, 50 90 Q 70 85, 70 65 Q 50 70, 30 65 Z" fill="#A8132E" opacity="0.85"/>
+                <circle cx="38" cy="40" r="1.2" fill="#FBF8F3" opacity="0.7"/>
+                <circle cx="62" cy="40" r="1.2" fill="#FBF8F3" opacity="0.7"/>
+              </svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-rubi text-cream text-[9px] tracking-widest px-2 py-1 uppercase">Top</span>
+          </div>
+          <div class="p-5">
+            <p class="eyebrow text-mute mb-2">Lingerie</p>
+            <h3 class="display text-base text-ink mb-2 font-medium">Conjunto Renda Pink</h3>
+            <p class="display text-rubi font-medium">R$ 89,90</p>
+            <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Conjunto%20Renda%20Pink." class="block mt-3 text-xs text-rubi hover:text-rubi-deep transition-colors eyebrow">+ info →</a>
+          </div>
+        </article>
+
+        <article class="product-card rounded-sm group">
+          <div class="aspect-[3/4] relative overflow-hidden">
+            <div class="placeholder-product">
+              <svg width="60%" height="60%" viewBox="0 0 100 130">
+                <rect x="25" y="20" width="50" height="80" rx="3" fill="#E83864" opacity="0.85"/>
+                <path d="M 25 25 Q 40 18, 50 18 Q 60 18, 75 25" fill="none" stroke="#E83864" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="35" cy="40" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+                <circle cx="48" cy="50" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+                <circle cx="60" cy="42" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+                <circle cx="40" cy="65" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+                <circle cx="55" cy="78" r="1.5" fill="#FBF8F3" opacity="0.6"/>
+              </svg>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="eyebrow text-mute mb-2">Pijamas</p>
+            <h3 class="display text-base text-ink mb-2 font-medium">Camisola Acetinada</h3>
+            <p class="display text-rubi font-medium">R$ 119,90</p>
+            <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Camisola%20Acetinada." class="block mt-3 text-xs text-rubi hover:text-rubi-deep transition-colors eyebrow">+ info →</a>
+          </div>
+        </article>
+
+        <article class="product-card rounded-sm group">
+          <div class="aspect-[3/4] relative overflow-hidden">
+            <div class="placeholder-product">
+              <svg width="55%" height="55%" viewBox="0 0 100 130">
+                <rect x="35" y="15" width="30" height="8" rx="2" fill="#C9A961"/>
+                <rect x="38" y="23" width="24" height="5" fill="#C9A961" opacity="0.6"/>
+                <path d="M 28 30 L 72 30 L 75 110 Q 75 116, 68 116 L 32 116 Q 25 116, 25 110 Z" fill="#A8132E" opacity="0.85"/>
+                <text x="50" y="80" text-anchor="middle" font-family="Playfair Display, serif" font-size="10" font-style="italic" fill="#FBF8F3" opacity="0.7">Rubi</text>
+              </svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-gold text-ink text-[9px] tracking-widest px-2 py-1 uppercase">Novo</span>
+          </div>
+          <div class="p-5">
+            <p class="eyebrow text-mute mb-2">Perfume</p>
+            <h3 class="display text-base text-ink mb-2 font-medium">Eau de Parfum 50ml</h3>
+            <p class="display text-rubi font-medium">R$ 149,90</p>
+            <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Perfume%20Eau%20de%20Parfum%2050ml." class="block mt-3 text-xs text-rubi hover:text-rubi-deep transition-colors eyebrow">+ info →</a>
+          </div>
+        </article>
+
+        <article class="product-card rounded-sm group">
+          <div class="aspect-[3/4] relative overflow-hidden">
+            <div class="placeholder-product">
+              <svg width="55%" height="55%" viewBox="0 0 100 130">
+                <path d="M 50 95 Q 25 80, 22 55 Q 20 38, 35 32 Q 45 32, 50 42 Q 55 32, 65 32 Q 80 38, 78 55 Q 75 80, 50 95 Z" fill="#A8132E"/>
+                <circle cx="50" cy="55" r="6" fill="#FBF8F3" opacity="0.4"/>
+                <path d="M 50 60 L 50 75" stroke="#FBF8F3" stroke-width="2" opacity="0.6"/>
+              </svg>
+            </div>
+            <span class="absolute top-3 left-3 bg-rubi text-cream text-[9px] tracking-widest px-2 py-1 uppercase">+18</span>
+          </div>
+          <div class="p-5">
+            <p class="eyebrow text-mute mb-2">LoveShop</p>
+            <h3 class="display text-base text-ink mb-2 font-medium">Kit Sensações</h3>
+            <p class="display text-rubi font-medium">R$ 79,90</p>
+            <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Kit%20Sensa%C3%A7%C3%B5es." class="block mt-3 text-xs text-rubi hover:text-rubi-deep transition-colors eyebrow">+ info →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-14">
+        <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Quero%20ver%20o%20cat%C3%A1logo%20completo%20da%20Rubi." class="btn-rubi px-10 py-4 eyebrow inline-block">
+          Ver catálogo completo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEPOIMENTOS ========== -->
+  <section class="py-24 md:py-32 bg-cream-soft/40">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="text-center mb-16">
+        <p class="eyebrow text-rubi mb-8"><span class="ornamento-gold">Quem comprou amou</span></p>
+        <h2 class="display text-4xl md:text-5xl text-ink leading-[1.1] font-medium">
+          As palavras das nossas <span class="italica text-rubi">clientes</span>.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-cream rounded-sm p-7 border border-rubi/10">
+          <div class="flex gap-1 mb-5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="italica text-lg text-ink leading-snug mb-6">"Atendimento incrível! A Rubi tirou todas as minhas dúvidas e a peça chegou ainda melhor do que na foto. Já virei cliente fiel."</p>
+          <div class="pt-4 border-t border-rubi/10">
+            <p class="text-sm text-ink font-medium">Mariana S.</p>
+            <p class="text-xs text-mute">Florianópolis · SC</p>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-sm p-7 border border-rubi/10">
+          <div class="flex gap-1 mb-5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="italica text-lg text-ink leading-snug mb-6">"Embalagem totalmente discreta, ninguém em casa fazia ideia. Comprei de novo no mês seguinte!"</p>
+          <div class="pt-4 border-t border-rubi/10">
+            <p class="text-sm text-ink font-medium">Carolina M.</p>
+            <p class="text-xs text-mute">Porto Alegre · RS</p>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-sm p-7 border border-rubi/10">
+          <div class="flex gap-1 mb-5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A961"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="italica text-lg text-ink leading-snug mb-6">"Compro tudo aqui, da lingerie ao perfume. A curadoria é diferenciada e a Rubi sempre indica o que combina comigo."</p>
+          <div class="pt-4 border-t border-rubi/10">
+            <p class="text-sm text-ink font-medium">Letícia R.</p>
+            <p class="text-xs text-mute">Tubarão · SC</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <div class="text-center mb-16">
+        <p class="eyebrow text-rubi mb-8"><span class="ornamento">Dúvidas frequentes</span></p>
+        <h2 class="display text-4xl md:text-5xl text-ink leading-[1.1] font-medium">
+          Aqui tem <span class="italica text-rubi">resposta pra tudo.</span>
+        </h2>
+      </div>
+
+      <div class="space-y-3">
+
+        <details class="bg-cream-soft/40 border border-rubi/10 hover:border-rubi/30 transition-all duration-500 p-6 md:p-7 rounded-sm">
+          <summary class="flex items-center justify-between gap-6">
+            <h3 class="display text-lg md:text-xl text-ink font-medium">Como funciona o envio?</h3>
+            <svg class="faq-icon flex-shrink-0 text-rubi" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          </summary>
+          <div class="text-ink-mid mt-5 pt-5 border-t border-rubi/10 leading-relaxed text-sm">
+            Enviamos para todo o Brasil pelos Correios e transportadoras. O frete é calculado pelo seu CEP no fechamento. Embalagem 100% discreta — ninguém saberá o que tem dentro.
+          </div>
+        </details>
+
+        <details class="bg-cream-soft/40 border border-rubi/10 hover:border-rubi/30 transition-all duration-500 p-6 md:p-7 rounded-sm">
+          <summary class="flex items-center justify-between gap-6">
+            <h3 class="display text-lg md:text-xl text-ink font-medium">Quais formas de pagamento?</h3>
+            <svg class="faq-icon flex-shrink-0 text-rubi" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          </summary>
+          <div class="text-ink-mid mt-5 pt-5 border-t border-rubi/10 leading-relaxed text-sm">
+            Aceitamos PIX (com desconto especial), cartão de crédito (em até 6x sem juros) e boleto. Tudo combinado direto pelo WhatsApp pra ficar do jeito que for melhor pra você.
+          </div>
+        </details>
+
+        <details class="bg-cream-soft/40 border border-rubi/10 hover:border-rubi/30 transition-all duration-500 p-6 md:p-7 rounded-sm">
+          <summary class="flex items-center justify-between gap-6">
+            <h3 class="display text-lg md:text-xl text-ink font-medium">A embalagem é mesmo discreta?</h3>
+            <svg class="faq-icon flex-shrink-0 text-rubi" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          </summary>
+          <div class="text-ink-mid mt-5 pt-5 border-t border-rubi/10 leading-relaxed text-sm">
+            Totalmente. Sem identificação do conteúdo, sem nome de loja chamativa no remetente. Sigilo absoluto — você pode receber em casa, no trabalho, onde preferir.
+          </div>
+        </details>
+
+        <details class="bg-cream-soft/40 border border-rubi/10 hover:border-rubi/30 transition-all duration-500 p-6 md:p-7 rounded-sm">
+          <summary class="flex items-center justify-between gap-6">
+            <h3 class="display text-lg md:text-xl text-ink font-medium">Posso trocar se não servir?</h3>
+            <svg class="faq-icon flex-shrink-0 text-rubi" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          </summary>
+          <div class="text-ink-mid mt-5 pt-5 border-t border-rubi/10 leading-relaxed text-sm">
+            Sim! Política de troca em até 7 dias para peças que não foram usadas (lacre original). Itens íntimos seguem regras específicas — chama no WhatsApp que a gente resolve.
+          </div>
+        </details>
+
+        <details class="bg-cream-soft/40 border border-rubi/10 hover:border-rubi/30 transition-all duration-500 p-6 md:p-7 rounded-sm">
+          <summary class="flex items-center justify-between gap-6">
+            <h3 class="display text-lg md:text-xl text-ink font-medium">Loja física pra visitar?</h3>
+            <svg class="faq-icon flex-shrink-0 text-rubi" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 4v12M4 10h12"/></svg>
+          </summary>
+          <div class="text-ink-mid mt-5 pt-5 border-t border-rubi/10 leading-relaxed text-sm">
+            Estamos em Sombrio - SC com atendimento presencial sob agendamento. Manda mensagem que combinamos um horário tranquilo pra você experimentar e escolher com calma.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA FINAL ========== -->
+  <section id="contato" class="dark-section py-24 md:py-32">
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <p class="eyebrow text-gold mb-10"><span class="ornamento-light">Vamos conversar</span></p>
+
+      <h2 class="display text-5xl md:text-7xl text-cream leading-[1.05] font-medium mb-12">
+        Pronta pra <span class="italica text-gold">elevar</span><br>
+        sua autoestima?
+      </h2>
+
+      <p class="text-lg md:text-xl text-cream/80 leading-[1.7] mb-12 font-light max-w-2xl mx-auto">
+        Atendimento personalizado direto comigo. Tira dúvidas, pede dica, escolhe sua peça —
+        <em class="italica text-gold">do jeito que for melhor pra você.</em>
+      </p>
+
+      <div class="flex flex-col items-center gap-5 mb-12">
+        <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Rubi%20e%20gostaria%20de%20conhecer%20o%20cat%C3%A1logo." class="btn-cream px-14 py-5 eyebrow inline-flex items-center justify-center gap-3">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+          </svg>
+          Conversar no WhatsApp
+        </a>
+
+        <a href="https://www.instagram.com/rubimodaintimaa/" target="_blank" rel="noopener" class="text-cream/70 hover:text-gold transition-colors eyebrow inline-flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          @rubimodaintimaa
+        </a>
+      </div>
+
+      <div class="pt-12 border-t border-cream/10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 eyebrow text-cream/60">
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-gold inline-block"></span>
+          Atendimento personalizado
+        </span>
+        <span>·</span>
+        <span>PIX · cartão · boleto</span>
+        <span>·</span>
+        <span>Envio para todo Brasil</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-ink py-14 text-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-10 mb-10">
+
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 22 L48 22 L52 28 L32 56 L12 28 Z" fill="#A8132E" stroke="#7A0E22" stroke-width="0.5" stroke-linejoin="round"/>
+              <path d="M16 22 L20 12 L44 12 L48 22 Z" fill="#C42945" stroke="#7A0E22" stroke-width="0.5" stroke-linejoin="round"/>
+              <path d="M20 12 L24 22 L32 12 L40 22 L44 12 Z" fill="#A8132E" opacity="0.6"/>
+              <path d="M16 22 L24 22 L32 56 Z" fill="#A8132E" opacity="0.85"/>
+              <path d="M48 22 L40 22 L32 56 Z" fill="#7A0E22" opacity="0.75"/>
+            </svg>
+            <div>
+              <p class="display text-cream text-2xl leading-none font-medium">Rubi</p>
+              <p class="eyebrow text-cream/50 mt-1">moda íntima</p>
+            </div>
+          </div>
+          <p class="italica text-cream/70 text-base leading-relaxed max-w-xs">
+            "Para mulheres reais que sabem o que querem 💋"
+          </p>
+        </div>
+
+        <div>
+          <p class="eyebrow text-gold mb-5">Atendimento</p>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="https://wa.me/5548996436832" class="text-cream/70 hover:text-gold transition-colors">
+                WhatsApp · (48) 99643-6832
+              </a>
+            </li>
+            <li>
+              <a href="mailto:rubismodaintimaa@gmail.com" class="text-cream/70 hover:text-gold transition-colors">
+                rubismodaintimaa@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/rubimodaintimaa/" target="_blank" rel="noopener" class="text-cream/70 hover:text-gold transition-colors">
+                Instagram · @rubimodaintimaa
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="eyebrow text-gold mb-5">Loja</p>
+          <p class="text-sm text-cream/70 leading-relaxed">
+            Sombrio · Santa Catarina<br>
+            Atendimento online + presencial<br>
+            <span class="italica text-cream/50">Envio para todo Brasil</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-3">
+        <p class="text-xs text-cream/40">© 2026 Rubi Moda Íntima · Todos os direitos reservados</p>
+        <p class="italica text-cream/40 text-sm">eleve sua autoestima</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5548996436832?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Rubi%20e%20gostaria%20de%20conhecer%20o%20cat%C3%A1logo." class="wa-breath fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center hover:scale-110 transition-transform shadow-2xl" aria-label="Falar no WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/>
+    </svg>
+  </a>
+
+</body>
+</html>
